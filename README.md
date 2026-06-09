@@ -1,151 +1,151 @@
 # VR-Spiel 🎮
 
-Ein immersives VR-Spiel entwickelt mit **Three.js** für die **Oculus VR-Brille**, entstanden als Studienprojekt im Bereich Mensch-Computer-Interaktion (MCI).
+An immersive VR game developed with **Three.js** for the **Oculus VR headset**, created as a university project in the field of Human-Computer Interaction (HCI).
 
-## 📋 Projektübersicht
+## 📋 Project Overview
 
-**VR-Spiel** ist ein innovatives Virtual-Reality-Spiel, bei dem der Spieler mit einem Laser-Pointer dynamische Minen abschießen muss, die auf den Spieler zufliegen. Das Projekt demonstriert die praktische Anwendung von WebXR, Three.js und 3D-Raycasting in einer immersiven VR-Umgebung.
+**VR-Spiel** is an innovative Virtual Reality game where the player must shoot down dynamic mines approaching them using a laser pointer. The project demonstrates the practical application of VR input methods and immersive environments in interactive gaming.
 
-Das Spiel wurde konzipiert, um die Möglichkeiten von VR-Eingaben und immersiven Umgebungen optimal zu nutzen und ein spannendes Spielerlebnis zu schaffen.
+The game was designed to maximize the potential of VR inputs and immersive environments while creating an exciting gaming experience.
 
-## 🎮 Spielmechanik
+## 🎮 Game Mechanics
 
-- **VR-Immersion**: Vollständig immersive Erfahrung mit Oculus VR-Brille
-- **Laser-Pointer-Steuerung**: Ziele mit deinem Controller und schieße Minen ab
-- **Dynamische Gegner**: Minen (Kugeln mit rotierenden Sprengköpfen) fliegen auf den Spieler zu
-- **Raycasting**: Präzise Kollisionserkennung mittels 3D Raycasting
-- **Gewinn-/Verlustbedingungen**: Gewinne durch das Abschießen aller Minen, verliere wenn sie dich treffen
-- **Atmosphärische Grafik**: Farbcodierte Rückmeldung (Blau = Normal, Grün = Gewonnen, Rot = Verloren)
+- **VR Immersion**: Fully immersive experience with Oculus VR headset
+- **Laser Pointer Control**: Aim with your controller and shoot down mines
+- **Dynamic Enemies**: Mines (spheres with rotating warheads) fly towards the player
+- **Raycasting**: Precise collision detection using 3D raycasting
+- **Win/Loss Conditions**: Win by destroying all mines, lose if they hit you
+- **Atmospheric Graphics**: Color-coded feedback (Blue = Normal, Green = Won, Red = Lost)
 
-## 🛠️ Technologie
+## 🛠️ Technology
 
-- **Sprache**: JavaScript (100%)
-- **3D-Engine**: Three.js Module (r128 oder später)
-- **VR-Standard**: WebXR API
-- **Plattform**: Web-basiert, optimiert für Oculus VR-Geräte
-- **Graphics**: WebGL mit Shadow Mapping
-- **Input-Methode**: VR-Controller (Trigger zum Schießen/Greifen)
+- **Language**: JavaScript
+- **3D Engine**: Three.js Module (r128 or later)
+- **VR Standard**: WebXR API
+- **Platform**: Web-based, optimized for Oculus VR devices
+- **Graphics**: WebGL with Shadow Mapping
+- **Input Method**: VR Controller (Trigger for shooting/grabbing)
 
-## 📱 Anforderungen
+## 📱 Requirements
 
-- **VR-Hardware**: Oculus-kompatibles VR-Headset (Oculus Quest, Rift, etc.)
-- **Browser**: WebXR-fähiger Browser (Chrome, Edge, Firefox Reality)
-- **WebXR-Unterstützung**: Browser mit `navigator.xr` API
-- **WebGL 2.0**: Moderngrafische Unterstützung
+- **VR Hardware**: Oculus-compatible VR headset (Oculus Quest, Rift, etc.)
+- **Browser**: WebXR-capable browser (Chrome, Edge, Firefox Reality)
+- **WebXR Support**: Browser with `navigator.xr` API
+- **WebGL 2.0**: Modern graphics support
 
-## 🚀 Erste Schritte
+## 🚀 Getting Started
 
-1. Projekt klonen:
+1. Clone the project:
 ```bash
 git clone https://github.com/Nikolai8/VR-Spiel.git
 cd VR-Spiel
 ```
 
-2. Mit lokalem Server bereitstellen (wichtig für WebXR):
+2. Run a local server (required for WebXR):
 ```bash
-# Beispiel mit Python 3
+# Example with Python 3
 python -m http.server 8000
 
-# Oder mit Node.js http-server
+# Or with Node.js http-server
 npx http-server
 ```
 
-3. Im Browser öffnen: `http://localhost:8000`
+3. Open in browser: `http://localhost:8000`
 
-4. "ENTER VR" Button drücken und VR-Brille aufsetzen
+4. Press the "ENTER VR" button and put on your VR headset
 
-5. Mit dem Controller-Trigger die Minen abschießen und gewinnen!
+5. Use the controller trigger to shoot down the mines and win!
 
-## 🎯 Spielelemente
+## 🎯 Game Elements
 
-### Minen
-- **Erscheinung**: Kugeln mit rotierenden Sprengköpfen (Kegel-Strukturen)
-- **Verhalten**: Fliegen zufällig positioniert auf den Spieler zu
-- **Zerstörung**: Durch den Laser-Pointer beim Trigger-Druck
+### Mines
+- **Appearance**: Spheres with rotating warheads (cone structures)
+- **Behavior**: Randomly positioned, flying towards the player
+- **Destruction**: Via laser pointer when trigger is pressed
 
-### Laser-Pointer
-- **Herkunft**: Position und Orientierung des VR-Controllers
-- **Darstellung**: Gelbe Linie vom Controller zur Zielposition
-- **Reichweite**: 5 Einheiten oder bis zur nächsten Mine
+### Laser Pointer
+- **Origin**: Position and orientation of the VR controller
+- **Representation**: Yellow line from controller to target position
+- **Range**: 5 units or until reaching the nearest mine
 
-### Spielverlauf
-- **Gewinn**: Alle Minen abgeschossen (Array leer)
-- **Verlust**: Eine Mine trifft den Spieler im Kopfbereich (1.45-1.75 Y-Position, ±0.25 X-Position)
-- **Status**: Farbcodierte Bildschirmhintergründe zeigen Spielstatus an
+### Game Progress
+- **Victory**: All mines destroyed (array)
+- **Defeat**: A mine hits the player
+- **Status**: Color-coded screen backgrounds indicate game status
 
-## 📂 Projektstruktur
+## 📂 Project Structure
 
 ```
 VR-Spiel/
-├── index.html          # HTML-Entry Point
-├── app.js              # Hauptanwendung, Three.js Import und Setup
-├── vr.js               # WebXR Renderer und VR-Session-Management
-├── ray_demo.js         # Spiellogik, Raycast und Minen-Spawning
-├── basics.js           # Scene und Camera Setup
-├── geo.js              # Mesh-Erstellung (Geometrien)
+├── index.html          # HTML entry point
+├── app.js              # Main application, Three.js import and setup
+├── vr.js               # WebXR renderer and VR session management
+├── ray_demo.js         # Game logic, raycast and mine spawning
+├── basics.js           # Scene and camera setup
+├── geo.js              # Mesh creation (geometries)
 ├── style.css           # Styling
-├── three.module.js     # Three.js Library (v128+)
-├── LICENSE             # MIT License mit Educational Use Only
-└── README.md           # Diese Datei
+├── three.module.js     # Three.js library (v128+)
+├── LICENSE             # MIT License with Educational Use Only
+└── README.md           # This file
 ```
 
-## 🎓 Kontext
+## 🎓 Context
 
-Dieses Projekt wurde entwickelt als Teil eines Studienprojekts im Bereich **Mensch-Computer-Interaktion (MCI)** mit dem Fokus auf:
+This project was developed as part of a university project in the field of **Human-Computer Interaction (HCI)** with a focus on:
 
-- **3D-Grafik-Programmierung** mit Three.js
-- **VR-Entwicklung** mit WebXR API
-- **Interaktive Spielmechanik** in virtuellen Umgebungen
-- **Raycasting und Kollisionserkennung** in 3D
-- **User Experience** für VR-Interfaces
-- **Immersive Gaming-Erlebnis** Design
+- **3D Graphics Programming** with Three.js
+- **VR Development** with WebXR API
+- **Interactive Game Mechanics** in virtual environments
+- **Raycasting and Collision Detection** in 3D
+- **User Experience** for VR interfaces
+- **Immersive Gaming Experience** design
 
-## 🔧 Technische Details
+## 🔧 Technical Details
 
 ### WebXR Integration
-- Verwendet `navigator.xr.requestSession('immersive-vr')` für VR-Session
-- Unterstützt optionale Features: 'local-floor', 'bounded-floor'
-- Gamepad-Input für Controller-Buttons und Trigger
+- Uses `navigator.xr.requestSession('immersive-vr')` for VR session
+- Supports optional features: 'local-floor', 'bounded-floor'
+- Gamepad input for controller buttons and trigger
 
 ### 3D Rendering
-- WebGL Renderer mit Anti-Aliasing und Shadow Mapping
-- PCF-Shadows für realistische Beleuchtung
-- Sky-Blue Hintergrund (#73C2FB) mit dynamischen Farbänderungen
+- WebGL renderer with anti-aliasing and shadow mapping
+- PCF shadows for realistic lighting
+- Sky-blue background (#73C2FB) with dynamic color changes
 
-### Raycast-System
-- Präzise Raycasting vom Controller für Ziel-Erkennung
-- Dynamische Strahl-Längenberechnung
-- Intersection-Testing mit Minen-Array
+### Raycast System
+- Precise raycasting from controller for target detection
+- Dynamic beam length calculation
+- Intersection testing with mines array
 
-### Spiellogik
-- Automatisches Heranfliegen der Minen mit Zielsuche
-- Trigger-basiertes Greifen und Schießen
-- Matrix-Transformation für VR-Positionierung
+### Game Logic
+- Automatic mine approach with target tracking
+- Trigger-based grabbing and shooting
+- Matrix transformation for VR positioning
 
-## 🎯 Ziel des Projekts
+## 🎯 Project Goals
 
-Das Projekt diente der praktischen Erforschung und Implementierung von:
-- Effektiven 3D-Rendering-Techniken mit Three.js
-- WebXR-Standard für immersive Web-Erfahrungen
-- VR-Gameplay-Mechaniken und Interaktionsdesign
-- Real-time Raycast-basierte Zielerfassung
-- Immersive User Experience Design für VR-Geräte
+The project served the practical exploration and implementation of:
+- Effective 3D rendering techniques with Three.js
+- WebXR standard for immersive web experiences
+- VR gameplay mechanics and interaction design
+- Real-time raycast-based target acquisition
+- Immersive user experience design for VR devices
 
-## 📝 Lizenz
+## 📝 License
 
-Dieses Projekt ist lizenziert unter der **MIT License mit Educational Use Only Clause**.
+This project is licensed under the **MIT License with Educational Use Only Clause**.
 
-**Wichtig**: 
-- ✅ Verwendung, Modifikation und Lernen für **Bildungszwecke erlaubt**
-- ❌ **Kommerzielle Nutzung verboten** (ohne explizite Genehmigung)
-- ❌ **Copy-Paste als eigenes Projekt/Hausaufgabe verboten**
-- ✅ **Quellenangabe erforderlich** bei Verwendung
+**Important**: 
+- ✅ Use, modification, and learning for **educational purposes allowed**
+- ❌ **Commercial use prohibited** (without explicit permission)
+- ❌ **Copy-paste as your own project/homework prohibited**
+- ✅ **Attribution required** when using
 
-Siehe [LICENSE](LICENSE) für vollständige Details.
+See [LICENSE](LICENSE) for full details.
 
-## 🤝 Beitragen
+## 🤝 Contributing
 
-Fragen oder Verbesserungsvorschläge zum Projekt? Gerne können Issues erstellt oder Diskussionen geführt werden.
+Questions or suggestions for improvements? Feel free to create issues or start discussions.
 
 ---
 
@@ -153,16 +153,16 @@ Fragen oder Verbesserungsvorschläge zum Projekt? Gerne können Issues erstellt 
 
 **WebVR is Deprecated!**
 
-WebVR has been replaced by the **WebXR Device API**, which has wider support, more features, better performance, and supports both VR and AR. This project uses the **WebXR API** (not the deprecated WebVR), which is the current standard for immersive web experiences.
+WebVR has been replaced by the **WebXR Device API**, which has wider support, more features, better performance, and supports both VR and AR. This project uses the **WebXR API** (not the deprecated WebVR).
 
 > This page is preserved as a historical reference, but WebVR is no longer relevant. For modern VR web development, visit [immersiveweb.dev](https://immersiveweb.dev) instead!
 
-**Was ist WebXR?**
+**What is WebXR?**
 
-WebXR ist die moderne offene Spezifikation, die es ermöglicht, VR- und AR-Erfahrungen im Browser zu erleben. Sie bietet bessere Leistung, mehr Features und breitere Unterstützung als das veraltete WebVR-Standard.
+WebXR is the modern open specification that enables VR and AR experiences in the browser. It offers better performance, more features, and broader support than the deprecated WebVR standard.
 
 ---
 
-**Viel Spaß beim Spielen in VR! 🥽🎮**
+**Have fun playing in VR! 🥽🎮**
 
-*Entwickelt als MCI-Studienprojekt*
+*Developed as an HCI university project*
