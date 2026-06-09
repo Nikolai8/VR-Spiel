@@ -4,7 +4,7 @@ Ein immersives VR-Spiel entwickelt mit **Three.js** für die **Oculus VR-Brille*
 
 ## 📋 Projektübersicht
 
-**VR-Spiel** ist ein innovatives Virtual-Reality-Spiel, bei dem der Spieler mit einem Laser-Pointer dynamische Minen abschießen muss, die auf den Spieler zufliegen. Das Projekt demonstriert die praktische Anwendung von **Three.js** für 3D-Grafiken und **WebXR API** für VR-Interaktion.
+**VR-Spiel** ist ein innovatives Virtual-Reality-Spiel, bei dem der Spieler mit einem Laser-Pointer dynamische Minen abschießen muss, die auf den Spieler zufliegen. Das Projekt demonstriert die praktische Anwendung von WebXR, Three.js und 3D-Raycasting in einer immersiven VR-Umgebung.
 
 Das Spiel wurde konzipiert, um die Möglichkeiten von VR-Eingaben und immersiven Umgebungen optimal zu nutzen und ein spannendes Spielerlebnis zu schaffen.
 
@@ -146,6 +146,20 @@ Siehe [LICENSE](LICENSE) für vollständige Details.
 ## 🤝 Beitragen
 
 Fragen oder Verbesserungsvorschläge zum Projekt? Gerne können Issues erstellt oder Diskussionen geführt werden.
+
+---
+
+## ⚠️ WebVR Deprecation Notice
+
+**WebVR is Deprecated!**
+
+WebVR has been replaced by the **WebXR Device API**, which has wider support, more features, better performance, and supports both VR and AR. This project uses the **WebXR API** (not the deprecated WebVR), which is the current standard for immersive web experiences.
+
+> This page is preserved as a historical reference, but WebVR is no longer relevant. For modern VR web development, visit [immersiveweb.dev](https://immersiveweb.dev) instead!
+
+**Was ist WebXR?**
+
+WebXR ist die moderne offene Spezifikation, die es ermöglicht, VR- und AR-Erfahrungen im Browser zu erleben. Sie bietet bessere Leistung, mehr Features und breitere Unterstützung als das veraltete WebVR-Standard.
 
 ---
 
